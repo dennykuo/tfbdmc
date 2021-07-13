@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon.png">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let formData = new FormData();
+    formData.append('a', '123');
+    let apiUrl = location.origin != 'http://comhere.local'
+                 ? 'https://deposit.comhere.com/api/support-form'
+                 : 'http://deposit.comhere.local/api/support-form';
+
+    fetch(apiUrl, {
+      cache: 'no-cache',
+      method: 'POST',
+      mode: 'cors',
+      body: formData
+    })
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      }
+
+      throw new Error('Response is not OK.');
+    })
+    .then(function(data) {
+      console.log(data);
+      return data;
+    })
+    .catch((error) => {
+      console.error('Error: ' + error);
+    });
+  </script>
+</body>
+</html>

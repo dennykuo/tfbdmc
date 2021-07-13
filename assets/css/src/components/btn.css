@@ -1,0 +1,5 @@
+.c-btn {
+    @apply w-full mb-2 btn btn-lg sm:w-auto sm:mb-0;
+}
+
+

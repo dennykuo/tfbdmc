@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/base/base.css"],"names":[],"mappings":"AAAA;IACI;QACI,qBAAqB;IACzB;AACJ","file":"base.css","sourcesContent":["@layer base {\n    *:focus {\n        outline: 0 !important;\n    }\n}"]}
